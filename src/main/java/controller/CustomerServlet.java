@@ -104,7 +104,6 @@ public class CustomerServlet extends HttpServlet {
     private void listCustomers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customer> customers = customerService.findAll();
         request.setAttribute("customers", customers);
-        System.out.println(request.getAttribute("customers"));
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/customer/list.jsp");
         dispatcher.forward(request, response);
     }
@@ -123,6 +122,7 @@ public class CustomerServlet extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+        System.out.println(customer);
     }
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

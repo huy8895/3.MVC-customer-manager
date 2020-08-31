@@ -19,12 +19,12 @@
         <a href="/customers?action=create">Create new customer</a>
     </p>
     <table class="table table-hover">
-        <tr>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Address</td>
-            <td>Edit</td>
-            <td>Delete</td>
+        <tr class="border-primary">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <c:forEach items="${customers}" var="customer">
             <tr onclick="document.location = '/customers?action=view&id=${customer.getId()}'">
@@ -33,6 +33,7 @@
                 <td>${customer.getAddress()}</td>
                 <td><a href="/customers?action=edit&id=${customer.getId()}">edit</a></td>
                 <td><a href="/customers?action=delete&id=${customer.getId()}">delete</a></td>
+
             </tr>
         </c:forEach>
     </table>
